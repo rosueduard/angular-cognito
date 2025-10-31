@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <div *ngIf="!isAuthenticated">
-      <h1>Nu esti autentificat! - test deploy</h1>
+      <h1>Nu esti autentificat!</h1>
       <button (click)="login()">Login</button>
     </div>
 
