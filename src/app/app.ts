@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
+  styleUrls: ['./app.css'],
   standalone: true,
   imports: [CommonModule],
   template: `
     <div *ngIf="!isAuthenticated">
-      <h1>Nu esti autentificat!</h1>
+      <h1 class="title">Nu esti autentificat!</h1>
       <button (click)="login()">Login</button>
     </div>
 
