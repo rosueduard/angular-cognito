@@ -1,6 +1,5 @@
 name: Deploy Angular to S3
 
-# Rulează la push pe develop sau manual
 on:
   push:
     branches:
@@ -35,3 +34,6 @@ jobs:
 
       - name: Sync to S3
         run: aws s3 sync dist/angular-cognito/browser s3://${{ secrets.S3_BUCKET_NAME }} --delete
+
+      - name: Invalidate CloudFront cache
+        run: aws cloudfront create-invalidation --distribution-id E37UJBFSKKOJ2P --paths "/*"
