@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { CommonModule } from '@angular/common';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -27,10 +28,9 @@ export class AppComponent implements OnInit {
   userName: string | null = null;
   email: string | null = null;
 
-  // datele tale corecte
-  private cognitoDomain = 'eu-north-1hdxcmj4kb.auth.eu-north-1.amazoncognito.com';
-  private clientId = '2gb3rpf8a5ah56c78740t6anna';
-  private postLogoutRedirectUri = 'http://localhost:4200';
+  private cognitoDomain = environment.cognitoDomain;
+  private clientId = environment.clientId;
+  private postLogoutRedirectUri = environment.logoutUri;
 
   constructor(private oidcSecurityService: OidcSecurityService) {}
 
